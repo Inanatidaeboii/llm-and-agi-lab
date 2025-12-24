@@ -1,3 +1,5 @@
+#version 1.0
+
 import tiktoken
 from google import genai
 from google.genai import types
@@ -98,7 +100,7 @@ if __name__ == "__main__":
                 chat_session.update_cost_from_output(response.text)
                 print(f"Assistant: {response.text}")
                 print(f"[Stats] Tokens: {chat_session.calculate_current_tokens()}/{chat_session.max_tokens} | Cost: {chat_session.total_cost_thb:.4f} THB")
-                print("-" * 30)
+                print("-" * 50)
 
             except Exception as e:
                 print(f"Error: {str(e)}")
