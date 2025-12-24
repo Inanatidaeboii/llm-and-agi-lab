@@ -57,7 +57,7 @@ def ingest_data():
     print(f"Split into {len(splits)} chunks.")
 
     print("Creating Vector Store...")
-    embedding_function = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    embedding_function = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
 
     vector_store = Chroma.from_documents(
         documents=splits,
