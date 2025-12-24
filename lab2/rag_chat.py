@@ -1,3 +1,5 @@
+#version 1.0
+
 import os
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
