@@ -10,7 +10,6 @@ from langchain_classic.chains.combine_documents import create_stuff_documents_ch
 from langchain_core.prompts import ChatPromptTemplate
 
 load_dotenv()
-
 VECTOR_DB_PATH = "./chroma_db_data"
 
 def start_chat():
@@ -33,7 +32,7 @@ def start_chat():
     system_prompt = (
         "คุณเป็นผู้ช่วยทนายความที่เก่งกาจและแม่นยำ "
         "หน้าที่ของคุณคือตอบคำถามโดยใช้ข้อมูลจาก Context ที่ให้มาด้านล่างนี้เท่านั้น "
-        "ถ้าข้อมูลใน Context ไม่เพียงพอที่จะตอบ ให้ตอบว่า 'ขออภัย ไม่พบข้อมูลดังกล่าวในเอกสาร' "
+        "ถ้าข้อมูลใน Context ไม่เพียงพอที่จะตอบ ให้ตอบว่า 'ขออภัย ไม่พบข้อมูลดังกล่าวในเอกสาร'"
         "ห้ามกุเรื่องขึ้นมาเองเด็ดขาด "
         "\n\n"
         "{context}"
@@ -48,7 +47,7 @@ def start_chat():
 
     question_answer_chain = create_stuff_documents_chain(llm, prompt)
     rag_chain = create_retrieval_chain(retriever, question_answer_chain)
-    
+     
     print("AI Legal Assistant Ready!")
     print("-" * 50)
 
